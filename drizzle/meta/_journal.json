@@ -8,6 +8,13 @@
       "when": 1726155550397,
       "tag": "0000_strong_dracula",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1726431258128,
+      "tag": "0001_complete_darkstar",
+      "breakpoints": true
     }
   ]
 }

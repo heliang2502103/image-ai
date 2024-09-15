@@ -12,10 +12,27 @@ import { FaGithub } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
+import {Input} from '@/components/ui/input'
+import React, { useState } from 'react'
+import { Separator } from '@/components/ui/separator'
 
 
 
 export const SIgnInCard = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+
+  // 提交登录
+  const onCredentialSignIn = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    signIn('credentials', {
+      email:email,
+      password:password,
+      callbackUrl: '/'
+    })
+  }
   const onProvideSignIn = (provider:'github' | 'google') => {
     signIn(provider, {callbackUrl:'/'})
   }
@@ -31,6 +48,15 @@ export const SIgnInCard = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className={'space-y-5 px-0 pb-0'}>
+       {/* 登录表单 */}
+        <form onSubmit={onCredentialSignIn} className={'space-y-2.5'}>
+          <Separator/>
+          <Input value={email} onChange={e => setEmail(e.target.value)} placeholder={'Email'} type={'email'} required/>
+          <Input value={password} onChange={e => setPassword(e.target.value)} placeholder={'Password'} type={'password'} required/>
+          <Button type={'submit'} className={'w-full'} size={'lg'}>
+            Continue
+          </Button>
+        </form>
        <div className={'gap-y-2.5 flex flex-col'}>
          <Button variant={'outline'} size={'lg'} className={'w-full relative'} onClick={() => onProvideSignIn('google')}>
            <FcGoogle className={'mr-2 size-5 top-2.5 left-2.5 absolute'}/>
