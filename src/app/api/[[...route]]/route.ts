@@ -4,6 +4,7 @@ import images from './images'
 import ai from './ai'
 import users from './users'
 import test from './test'
+import projects from './projects'
 import { AuthConfig, initAuthConfig } from '@hono/auth-js'
 import authConfig from '@/lib/auth.config'
 
@@ -20,7 +21,7 @@ const app = new Hono().basePath('/api')
 // 验证中间件
 app.use('*', initAuthConfig(getAuthConfig))
 
-const routes = app.route('/images', images).route('/ai', ai).route('/users', users).route('/test', test)
+const routes = app.route('/images', images).route('/ai', ai).route('/users', users).route('/test', test).route('/projects', projects)
 
 
 export const GET = handle(app)

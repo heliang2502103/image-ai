@@ -15,6 +15,13 @@
       "when": 1726431258128,
       "tag": "0001_complete_darkstar",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726518142003,
+      "tag": "0002_pretty_dakota_north",
+      "breakpoints": true
     }
   ]
 }
