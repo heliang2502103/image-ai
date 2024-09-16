@@ -1,6 +1,5 @@
+'use client'
 import { StrokeWidthSidebar } from '@/features/editer/components/StrokeWidthSidebar'
-;('usr client')
-
 import { Navbar } from '@/features/editer/components/Navbar'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useEditor } from '../hooks/use-editor'

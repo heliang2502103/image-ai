@@ -23,6 +23,7 @@ import { Hint } from '@/components/ui/hint'
 import { BsCloudCheck } from 'react-icons/bs'
 import { ActiveTool, Editor } from '@/features/editer/types'
 import { cn } from '@/lib/utils'
+import { UserButton } from '@/features/auth/components/UserButton'
 
 interface NavbarProps {
   editor: Editor | undefined
@@ -196,8 +197,8 @@ export const Navbar = ({
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
-          {/* 添加用户 */}
+          {/*User Button*/}
+          <UserButton/>
         </div>
       </div>
     </nav>
