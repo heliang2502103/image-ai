@@ -20,8 +20,13 @@ import { AiSidebar } from './AiSidebar'
 import { RemoveBgSidebar } from './RemoveBgSidebar'
 import { DrawSidebar } from './DrawSidebar';
 import { SettingsSidebar } from './SettingsSidebar';
+import type {ResponseType} from '@/features/projects/api/use-get-project'
 
-export const Editor = () => {
+interface EditorProps {
+  initialDate: ResponseType['data']
+}
+
+export const Editor = ({initialDate}:EditorProps) => {
   const [activeTool, setActiveTool] = useState<ActiveTool>('select')
 
   const onClearSelection = useCallback(() => {
