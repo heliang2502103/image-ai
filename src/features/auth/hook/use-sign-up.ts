@@ -17,13 +17,9 @@ export const useSignUp = () => {
       const response = await client.api.users.$post({ json })
 
       if(!response.ok) {
-        toast.error('Something went wrong')
         throw new Error('Something went wrong')
       }
       return await response.json()
-    },
-    onError:() => {
-      toast.error('Something went wrong')
     },
     onSuccess:() => {
       toast.success('User created')
